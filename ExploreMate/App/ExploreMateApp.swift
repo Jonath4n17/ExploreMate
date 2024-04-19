@@ -2,7 +2,7 @@
 //  ExploreMateApp.swift
 //  ExploreMate
 //
-//  Created by Jodie Zhu on 2024-04-19.
+//  Created by Jonathan Lin on 2024-04-17.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct ExploreMateApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
