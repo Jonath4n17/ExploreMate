@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardInfoView: View {
+    @Binding var showModal: Bool
+    
     let location: Location
     
     var body: some View {
@@ -20,7 +22,7 @@ struct CardInfoView: View {
                 Spacer()
                 
                 Button {
-                    print("DEBUG: Show popup")
+                    showModal.toggle()
                 } label: {
                     Image(systemName: "arrow.up.circle")
                         .fontWeight(.heavy)
@@ -42,6 +44,6 @@ struct CardInfoView: View {
 
 struct CardInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        CardInfoView(location: MockData.locations[1])
+        CardInfoView(showModal: .constant(false), location: MockData.locations[1])
     }
 }
