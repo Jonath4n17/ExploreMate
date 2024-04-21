@@ -34,8 +34,9 @@ struct CardView: View {
             
             CardInfoView(showModal: $showModal, location: location)
         }
-        .fullScreenCover(isPresented: $showModal) {
-            Text("User Profile")
+        .sheet(isPresented: $showModal) {
+            LocationModalView(location: location)
+                .presentationDetents([.large])
         }
         .onReceive(viewModel.$buttonSwipeAction, perform: { action in
             onReceiveSwipeAction(action)

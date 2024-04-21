@@ -25,6 +25,7 @@
 		D34EE0E02BD30AF20042F4E0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0DF2BD30AF20042F4E0 /* MockData.swift */; };
 		D34EE0E22BD318620042F4E0 /* SwipeActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E12BD318620042F4E0 /* SwipeActionButtonsView.swift */; };
 		D34EE0E42BD319910042F4E0 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E32BD319910042F4E0 /* SwipeAction.swift */; };
+		D34EE0E82BD37B8E0042F4E0 /* LocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E72BD37B8E0042F4E0 /* LocationModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D34EE0DF2BD30AF20042F4E0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		D34EE0E12BD318620042F4E0 /* SwipeActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButtonsView.swift; sourceTree = "<group>"; };
 		D34EE0E32BD319910042F4E0 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
+		D34EE0E72BD37B8E0042F4E0 /* LocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		D34EE0B92BD307C50042F4E0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D34EE0E52BD37B660042F4E0 /* Modal */,
 				D34EE0BE2BD308A50042F4E0 /* Cards */,
 				D34EE0BD2BD308A10042F4E0 /* TabBar */,
 			);
@@ -229,6 +232,14 @@
 			path = MockData;
 			sourceTree = "<group>";
 		};
+		D34EE0E52BD37B660042F4E0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				D34EE0E72BD37B8E0042F4E0 /* LocationModalView.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +318,7 @@
 				D34EE0AB2BD307920042F4E0 /* ExploreMateApp.swift in Sources */,
 				D34EE0E02BD30AF20042F4E0 /* MockData.swift in Sources */,
 				D34EE0E22BD318620042F4E0 /* SwipeActionButtonsView.swift in Sources */,
+				D34EE0E82BD37B8E0042F4E0 /* LocationModalView.swift in Sources */,
 				D34EE0C62BD308FE0042F4E0 /* CardImageIndicatorView.swift in Sources */,
 				D34EE0DD2BD30AD90042F4E0 /* SizeConstants.swift in Sources */,
 				D34EE0C82BD309160042F4E0 /* CardInfoView.swift in Sources */,
