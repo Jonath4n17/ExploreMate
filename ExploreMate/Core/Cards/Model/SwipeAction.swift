@@ -2,7 +2,7 @@
 //  SwipeAction.swift
 //  ExploreMate
 //
-//  Created by Jodie Zhu on 2024-04-19.
+//  Created by Jonathan Lin on 2024-04-19.
 //
 
 import Foundation

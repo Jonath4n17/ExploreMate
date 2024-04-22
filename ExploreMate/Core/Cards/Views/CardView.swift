@@ -19,7 +19,8 @@ struct CardView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
-                Image(location.profileImageURLs[currentImageIndex])
+//                Image(location.profileImageURLs[currentImageIndex])
+                  Image("clawAndKitty")
                     .resizable()
                     .scaledToFill()
                     .overlay {

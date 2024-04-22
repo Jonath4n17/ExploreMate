@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "E273F011-B7C5-4505-8D83-EC01402ECD77",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "locationScenario" : {
+      "identifier" : "New York, NY, USA",
+      "referenceType" : "built-in"
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ExploreMate.xcodeproj",
+      "identifier" : "D34EE0A62BD307920042F4E0",
+      "name" : "ExploreMate"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

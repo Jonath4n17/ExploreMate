@@ -26,6 +26,8 @@
 		D34EE0E22BD318620042F4E0 /* SwipeActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E12BD318620042F4E0 /* SwipeActionButtonsView.swift */; };
 		D34EE0E42BD319910042F4E0 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E32BD319910042F4E0 /* SwipeAction.swift */; };
 		D34EE0E82BD37B8E0042F4E0 /* LocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E72BD37B8E0042F4E0 /* LocationModalView.swift */; };
+		D34EE0EC2BD5AFBD0042F4E0 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34EE0EB2BD5AFBD0042F4E0 /* Config.plist */; };
+		D34EE0F52BD6227B0042F4E0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0F42BD6227B0042F4E0 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		D34EE0E12BD318620042F4E0 /* SwipeActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButtonsView.swift; sourceTree = "<group>"; };
 		D34EE0E32BD319910042F4E0 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
 		D34EE0E72BD37B8E0042F4E0 /* LocationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModalView.swift; sourceTree = "<group>"; };
+		D34EE0EB2BD5AFBD0042F4E0 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		D34EE0EF2BD5BB0F0042F4E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D34EE0F02BD5E2640042F4E0 /* ExploreMate.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExploreMate.xctestplan; sourceTree = "<group>"; };
+		D34EE0F42BD6227B0042F4E0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		D34EE09E2BD307920042F4E0 = {
 			isa = PBXGroup;
 			children = (
+				D34EE0F02BD5E2640042F4E0 /* ExploreMate.xctestplan */,
 				D34EE0A92BD307920042F4E0 /* ExploreMate */,
 				D34EE0A82BD307920042F4E0 /* Products */,
 			);
@@ -81,6 +88,8 @@
 		D34EE0A92BD307920042F4E0 /* ExploreMate */ = {
 			isa = PBXGroup;
 			children = (
+				D34EE0EF2BD5BB0F0042F4E0 /* Info.plist */,
+				D34EE0EB2BD5AFBD0042F4E0 /* Config.plist */,
 				D34EE0B82BD307AA0042F4E0 /* App */,
 				D34EE0AE2BD307930042F4E0 /* Assets.xcassets */,
 				D34EE0B92BD307C50042F4E0 /* Core */,
@@ -111,6 +120,7 @@
 		D34EE0B92BD307C50042F4E0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D34EE0F32BD6226D0042F4E0 /* List */,
 				D34EE0E52BD37B660042F4E0 /* Modal */,
 				D34EE0BE2BD308A50042F4E0 /* Cards */,
 				D34EE0BD2BD308A10042F4E0 /* TabBar */,
@@ -240,6 +250,14 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		D34EE0F32BD6226D0042F4E0 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D34EE0F42BD6227B0042F4E0 /* ListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D34EE0B22BD307930042F4E0 /* Preview Assets.xcassets in Resources */,
+				D34EE0EC2BD5AFBD0042F4E0 /* Config.plist in Resources */,
 				D34EE0AF2BD307930042F4E0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +337,7 @@
 				D34EE0AB2BD307920042F4E0 /* ExploreMateApp.swift in Sources */,
 				D34EE0E02BD30AF20042F4E0 /* MockData.swift in Sources */,
 				D34EE0E22BD318620042F4E0 /* SwipeActionButtonsView.swift in Sources */,
+				D34EE0F52BD6227B0042F4E0 /* ListView.swift in Sources */,
 				D34EE0E82BD37B8E0042F4E0 /* LocationModalView.swift in Sources */,
 				D34EE0C62BD308FE0042F4E0 /* CardImageIndicatorView.swift in Sources */,
 				D34EE0DD2BD30AD90042F4E0 /* SizeConstants.swift in Sources */,
@@ -462,6 +482,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ExploreMate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExploreMate/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to find nearby places";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,6 +512,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ExploreMate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExploreMate/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to find nearby places";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

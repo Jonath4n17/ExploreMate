@@ -2,7 +2,7 @@
 //  LocationModalView.swift
 //  ExploreMate
 //
-//  Created by Jodie Zhu on 2024-04-20.
+//  Created by Jonathan Lin on 2024-04-20.
 //
 
 import SwiftUI
@@ -48,9 +48,34 @@ struct LocationModalView: View {
                     }
                     
                     VStack(alignment: .leading, spacing: 12) {
+                        Text("Details")
+                            .fontWeight(.semibold)
+                        HStack {
+                            Text("Address: ")
+                            Text(location.address)
+                        }
+                        HStack {
+                            Text("Rating: ")
+                            Text(String(format: "%.2f", location.rating ?? "None"))
+                        }
+                        HStack {
+                            Text("Rating Count: ")
+                            Text("\(location.userRatingCount)")
+                        }
+                        HStack {
+                            Text("Google Maps: ")
+                            Text("[Directions](\(location.googleMapsUri))")
+                        }
+                    }
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                    .font(.subheadline)
+                    
+                    VStack(alignment: .leading, spacing: 12) {
                         Text("Description")
                             .fontWeight(.semibold)
-                        Text("Test description")
+                        Text(location.desc!)
                     }
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                     .padding()
