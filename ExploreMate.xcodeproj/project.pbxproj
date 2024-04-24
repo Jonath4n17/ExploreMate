@@ -28,6 +28,7 @@
 		D34EE0E82BD37B8E0042F4E0 /* LocationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0E72BD37B8E0042F4E0 /* LocationModalView.swift */; };
 		D34EE0EC2BD5AFBD0042F4E0 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D34EE0EB2BD5AFBD0042F4E0 /* Config.plist */; };
 		D34EE0F52BD6227B0042F4E0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0F42BD6227B0042F4E0 /* ListView.swift */; };
+		D34EE0F72BD8B10B0042F4E0 /* ApiCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EE0F62BD8B10B0042F4E0 /* ApiCreds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		D34EE0EF2BD5BB0F0042F4E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D34EE0F02BD5E2640042F4E0 /* ExploreMate.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ExploreMate.xctestplan; sourceTree = "<group>"; };
 		D34EE0F42BD6227B0042F4E0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		D34EE0F62BD8B10B0042F4E0 /* ApiCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCreds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				D34EE0DC2BD30AD90042F4E0 /* SizeConstants.swift */,
+				D34EE0F62BD8B10B0042F4E0 /* ApiCreds.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				D34EE0E22BD318620042F4E0 /* SwipeActionButtonsView.swift in Sources */,
 				D34EE0F52BD6227B0042F4E0 /* ListView.swift in Sources */,
 				D34EE0E82BD37B8E0042F4E0 /* LocationModalView.swift in Sources */,
+				D34EE0F72BD8B10B0042F4E0 /* ApiCreds.swift in Sources */,
 				D34EE0C62BD308FE0042F4E0 /* CardImageIndicatorView.swift in Sources */,
 				D34EE0DD2BD30AD90042F4E0 /* SizeConstants.swift in Sources */,
 				D34EE0C82BD309160042F4E0 /* CardInfoView.swift in Sources */,

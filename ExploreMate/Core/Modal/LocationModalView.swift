@@ -35,16 +35,16 @@ struct LocationModalView: View {
             ScrollView {
                 VStack {
                     ZStack(alignment: .top) {
-                        Image(location.profileImageURLs[currentImageIndex])
+                        Image(location.imageURLs[currentImageIndex])
                             .resizable()
                             .scaledToFill()
                             .overlay {
-                                ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: location.profileImageURLs.count)
+                                ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: location.imageURLs.count)
                             }
                             .frame(height: SizeConstants.cardHeight / 2.5)
                             .clipped()
                         
-                        CardImageIndicatorView(currentImageIndex: currentImageIndex, imageCount: location.profileImageURLs.count)
+                        CardImageIndicatorView(currentImageIndex: currentImageIndex, imageCount: location.imageURLs.count)
                     }
                     
                     VStack(alignment: .leading, spacing: 12) {

@@ -8,6 +8,8 @@
 import Foundation
 
 struct Location: Identifiable, Hashable, Decodable {
+    private let urlStart = "https://places.googleapis.com/v1/"
+    private let urlEnd = "/media?maxWidthPx=400&key=" + (ApiCreds.key ?? "")
     let id: String // default value for now, is changed later
     let name: String
     let address: String
@@ -16,7 +18,7 @@ struct Location: Identifiable, Hashable, Decodable {
     let googleMapsUri: String
     let priceLevel: String?
     let userRatingCount: Int?
-    var profileImageURLs = [String]()
+    var imageURLs = [String]()
     
     private enum CodingKeys: String, CodingKey {
         case id, displayName, rating, googleMapsUri, priceLevel, userRatingCount, photos
@@ -32,10 +34,7 @@ struct Location: Identifiable, Hashable, Decodable {
         }
         
         enum Photos: String, CodingKey {
-            case authorAttr = "authorAttributions"
-            enum AuthorAttr: String, CodingKey {
-                case photoUri
-            }
+            case photoName = "name"
         }
     }
     
@@ -50,12 +49,12 @@ struct Location: Identifiable, Hashable, Decodable {
 
         self.userRatingCount = try? mainContainer.decode(Int.self, forKey: .userRatingCount)
         
-        print("DEBUG: REACH1")
+//        print("DEBUG: REACH1")
         
         let nameContainer = try mainContainer.nestedContainer(keyedBy: CodingKeys.DisplayName.self, forKey: .displayName)
         self.name = try nameContainer.decode(String.self, forKey: .name)
         
-        print("DEBUG: REACH2")
+//        print("DEBUG: REACH2")
         
         do {
             let descContainer = try mainContainer.nestedContainer(keyedBy: CodingKeys.Summary.self, forKey: .summary)
@@ -64,15 +63,14 @@ struct Location: Identifiable, Hashable, Decodable {
             self.desc = "A funfilled place!"
         }
                 
-        print("DEBUG: BEFORE PARSING IMAGE URLS")
+//        print("DEBUG: BEFORE PARSING IMAGE URLS")
         
-        self.profileImageURLs.reserveCapacity(3)
+        self.imageURLs.reserveCapacity(3)
         var photosContainer = try mainContainer.nestedUnkeyedContainer(forKey: .photos)
         for _ in 0...2 {
             let nestedContainer = try photosContainer.nestedContainer(keyedBy: CodingKeys.Photos.self)
-            var authorAttrContainer = try nestedContainer.nestedUnkeyedContainer(forKey: .authorAttr)
-            let firstAuthorAttrContainer = try authorAttrContainer.nestedContainer(keyedBy: CodingKeys.Photos.AuthorAttr.self)
-            self.profileImageURLs.append(try firstAuthorAttrContainer.decode(String.self, forKey: .photoUri))
+            let photoName = try nestedContainer.decode(String.self, forKey: .photoName)
+            imageURLs.append(urlStart + photoName + urlEnd)
         }
      }
     
@@ -85,7 +83,7 @@ struct Location: Identifiable, Hashable, Decodable {
         self.googleMapsUri = "TEST URL"
         self.priceLevel = "TEST PRICE LEVEL"
         self.userRatingCount = 432
-        self.profileImageURLs = ["clawAndKitty-2"]
+        self.imageURLs = ["clawAndKitty-2"]
         self.desc = "TEST INPUT"
     }
 }

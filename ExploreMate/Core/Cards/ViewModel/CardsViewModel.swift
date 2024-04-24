@@ -9,6 +9,7 @@ import Foundation
 
 @MainActor
 class CardsViewModel: ObservableObject {
+    @Published var likedLocations = [Location]()
     @Published var cardModels = [CardModel]()
     @Published var buttonSwipeAction: SwipeAction?
     

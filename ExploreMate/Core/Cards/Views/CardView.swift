@@ -19,14 +19,32 @@ struct CardView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ZStack(alignment: .top) {
-//                Image(location.profileImageURLs[currentImageIndex])
-                  Image("clawAndKitty")
-                    .resizable()
-                    .scaledToFill()
-                    .overlay {
-                        ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: imageCount)
+//                  Image("clawAndKitty")
+                    AsyncImage(url: URL(string: location.imageURLs[currentImageIndex])) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .overlay {
+                                    ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: imageCount)
+                                }
+                                .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)
+                                // Apply other modifiers as needed
+                        } else if phase.error != nil {
+                            // Handle error
+                            Text("Failed to load image")
+                        } else {
+                            // Placeholder while loading
+                            ProgressView()
+                        }
                     }
-                    .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)
+//                Image(location.imageURLs[currentImageIndex])
+//                    .resizable()
+//                    .scaledToFill()
+//                    .overlay {
+//                        ImageScrollingOverlay(currentImageIndex: $currentImageIndex, imageCount: imageCount)
+//                    }
+//                    .frame(width: SizeConstants.cardWidth, height: SizeConstants.cardHeight)
                 
                 CardImageIndicatorView(currentImageIndex: currentImageIndex, imageCount: imageCount)
                 
@@ -62,7 +80,7 @@ private extension CardView {
     }
     
     var imageCount: Int {
-        return location.profileImageURLs.count
+        return location.imageURLs.count
     }
 }
 

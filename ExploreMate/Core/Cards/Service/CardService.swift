@@ -11,7 +11,6 @@ import CoreLocation
 class CardService: NSObject {
     
     private var locationManager: CLLocationManager
-    private var apiKey: String?
     private let urlString = "https://places.googleapis.com/v1/places:searchNearby"
     
     var latitude: Double?
@@ -23,18 +22,16 @@ class CardService: NSObject {
         locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-
-        loadAPIKey() // fetch API key from Config file
     }
 
     
     func fetchCardModels() async throws -> [CardModel] {
         guard let url = URL(string: urlString) else {return []}
-        guard apiKey != nil else { return [] }
+        guard ApiCreds.key != nil else { return [] }
                 
         let headers = [
             "Content-Type": "application/json",
-            "X-Goog-Api-Key": apiKey ?? "",
+            "X-Goog-Api-Key": ApiCreds.key ?? "",
             "X-Goog-FieldMask": "places.displayName,places.shortFormattedAddress,places.id,places.rating,places.googleMapsUri,places.priceLevel,places.userRatingCount,places.photos,places.editorialSummary"
         ]
         
@@ -61,7 +58,7 @@ class CardService: NSObject {
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
             let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-            print("DEBUG: DATA ->\n\(jsonDictionary)")
+//            print("DEBUG: DATA ->\n\(jsonDictionary)")
             guard let locationsData = jsonDictionary["places"] as? [[String: Any]] else {
                 // switch to throwing error later
                 print("DEBUG: RETRIEVAL OF PLACES VALUE FAILED")
@@ -77,13 +74,6 @@ class CardService: NSObject {
         
         let mockLocations = MockData.locations
         return mockLocations.map({ CardModel(location: $0)})
-    }
-    
-    func loadAPIKey() {
-        if let filePath = Bundle.main.path(forResource: "Config", ofType: "plist") {
-            let plist = NSDictionary(contentsOfFile: filePath)
-            self.apiKey = plist?.object(forKey: "API_KEY") as? String
-        }
     }
 }
 

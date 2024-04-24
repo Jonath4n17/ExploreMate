@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct ListView: View {
+    @ObservedObject var viewModel: CardsViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Location Matches")
+                .font(.title)
+                .fontWeight(.semibold)
+            
+            List {
+    //            ForEach(viewModel.likedLocations) { location in
+    //                Text(location.name)
+    //            }
+                HStack {
+                    Text("TEST")
+                    Spacer()
+                    Button {
+                        print("DEBUG: PRESSED")
+                    } label: {
+                        Image(systemName: "arrow.up.circle")
+                            .fontWeight(.heavy)
+                            .imageScale(.large)
+                    }
+                }
+                Text("TEST")
+            }
+        }
     }
 }
 
 #Preview {
-    ListView()
+    ListView(viewModel: CardsViewModel(service: CardService()))
 }
