@@ -5,4 +5,6 @@ an engaging, swipe-based user interface. This project was built using only Swift
 So far, this project is just an early prototype of the end app I had in mind. I intend to finish the lists tab to view liked locations, implement a recommendation system using possibly AI or an assigned weight algorithm, and allow for different users to connect with each
 other and to determine activties that they have all swiped right on.
 ## Demo
-![](https://github.com/Jonath4n17/ExploreMate/blob/main/ExploreMate.gif)
+<p align="center">
+  <img src="https://github.com/Jonath4n17/ExploreMate/blob/main/ExploreMate.gif" alt="animated" />
+</p>
